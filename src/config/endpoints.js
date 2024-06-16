@@ -2,7 +2,7 @@ export const endpoints = {
     account: {
       login: "api/user/login",
       signup: "api/user/signup",
-      user: "api/user/auth",
+      auth: "api/user/auth",
     },
     tour: {
       bookTour: "api/tour/booktour", // post request provide token also
