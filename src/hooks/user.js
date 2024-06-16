@@ -15,14 +15,13 @@ export function useUser() {
                 const response = await fetchJson(`${API_HOST_URL}/${endpoints.account.auth}` , {
                     headers: { 'Authorization': `Bearer ${accessToken}` },
                 });
-                const data = await response.json();
-                return data;
+                return await response;
             } catch (error) {
                 return null;
             }
         }
     })
-    return {user : data , isLoading , status}
+    return {user:data , status , isLoading}
 }
 
 
@@ -44,7 +43,7 @@ export function useLogin() {
                 const res = await mutation.mutateAsync({ email, password });
                 const user = await res.json();
                 if (user.success) {
-                    const { token } = user;
+                    const { token } = user.data;
                     localStorage.setItem(TOKEN_STORE_NAME, JSON.stringify(token));
                     queryClient.setQueryData([USER_QUERY_KEY], user.data);
                 }
@@ -65,19 +64,20 @@ export function useLogin() {
 export function useSignUp() {
     const queryClient = useQueryClient();
     const mutation = useMutation({
-        mutationFn: async ({ email, password }) => fetchJson(`${API_HOST_URL}/${endpoints.account.signup}`, {
+        mutationFn: async ({ email, password , name }) => fetchJson(`${API_HOST_URL}/${endpoints.account.signup}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 email,
-                password
+                password,
+                name
             })
         }, true)
     })
     return {
-        handleSignUp: async (email, password) => {
+        handleSignUp: async (email, password , name) => {
             try {
-                const res = await mutation.mutateAsync({ email, password });
+                const res = await mutation.mutateAsync({ email, password , name});
                 const user = await res.json();
                 if (user.success) {
                     const { token } = user;

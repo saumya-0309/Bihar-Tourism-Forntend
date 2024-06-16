@@ -10,7 +10,7 @@ const ProtectedRoutes = () => {
 		auth ? 
 				<Outlet />
 			: 
-			status !== 'loading' && <Navigate to='/account/login'/>
+			status !== 'pending' && <Navigate to='/account/login'/>
 	)
 }
 export default ProtectedRoutes;
