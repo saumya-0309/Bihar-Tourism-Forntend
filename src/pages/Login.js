@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { useLogin } from '../hooks/user';
+import { useLogin, useUser } from '../hooks/user';
 import { toast } from 'react-toastify';
 import LoginForm from '../components/forms/LoginForm';
 
@@ -8,21 +8,26 @@ const Login = () => {
     let navigate = useNavigate();
     const { handleLogin, loginLoading } = useLogin();
     const [response, setResponse] = React.useState(null);
+    const { user, status, isLoading } = useUser();
 
     useEffect(() => {
-        const accessToken = localStorage.getItem("token");
-        if (accessToken) {
-            window.location = '/'
+        if(!isLoading && user?.user?.role === 'ADMIN'){
+            navigate('/dashboard');
+        }else if(!isLoading && user?.user?.role === 'USER'){
+            navigate('/');
         }
-    }, [])
+    }, [isLoading, status,navigate, user])
 
     const handleSubmit = async (email, password) => {
         const res = await handleLogin(email, password);
         setResponse(res);
-        if (res.success) {
-            toast.success("Login successfull");
+        if (res.success && res.data.role === 'ADMIN') {
+            toast.success("Login Admin successfull");
+            navigate(`/dashboard`);
+        } else if(res.success && res.data.role === 'USER'){
+            toast.success("Login User successfull");
             navigate(`/`);
-        } else {
+        }else {
             toast.error(res.error);
         }
     };
@@ -30,8 +35,8 @@ const Login = () => {
         <section className='vh-100' style={{ backgroundColor: 'rgb(119, 101, 144)' }}>
             <div className="container py-3 h-100">
                 <div className="row d-flex justify-content-center align-items-center h-100">
-                    <div className="col col-xl-10">
-                        <div className="card" style={{ borderRadius: '1rem' }}>
+                    <div className="col col-xl-9">
+                        <div className="card" style={{ borderRadius: '1rem',  height:'90vh' }}>
                             <div className="row g-0">
                                 <div className="col-md-6 col-lg-5 d-none d-md-block">
                                     <img src="/images2.jpeg" alt="loading..."

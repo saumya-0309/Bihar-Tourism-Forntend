@@ -23,8 +23,8 @@ const Signup = () => {
         <section className='vh-100' style={{ backgroundColor: 'rgb(119, 101, 144)' }}>
             <div className="container py-3 h-100">
                 <div className="row d-flex justify-content-center align-items-center h-100">
-                    <div className="col col-xl-10">
-                        <div className="card" style={{ borderRadius: '1rem' }}>
+                    <div className="col col-xl-9">
+                        <div className="card" style={{ borderRadius: '1rem', height:'90vh' }}>
                             <div className="row g-0">
                                 <div className="col-md-6 col-lg-5 d-none d-md-block">
                                     <img src="/images3.jpg" alt="loading..."
