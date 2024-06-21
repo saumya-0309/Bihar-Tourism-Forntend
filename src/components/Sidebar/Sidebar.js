@@ -29,6 +29,12 @@ const Sidebar = () => {
             <i className="mdi mdi-note-plus menu-icon" style={{color:'#c012ff'}}></i>
           </Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" style={{color:'#c012ff'}} to="/blogs">
+            <span className="menu-title">Blogs</span>
+            <i className="mdi mdi-note-plus menu-icon" style={{color:'#c012ff'}}></i>
+          </Link>
+        </li>
       </ul>
     </nav>
   );

@@ -9,10 +9,10 @@ const Navbar = ({user}) => {
     <nav className="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <a className="navbar-brand brand-logo" href="/dashboard">
-          <img src="assets/images/logo.svg" alt="logo" />
+          <img src="/assets/images/logo.svg" alt="logo" />
         </a>
         <a className="navbar-brand brand-logo-mini" href="/dashboard">
-          <img src="assets/images/logo-mini.svg" alt="logo" />
+          <img src="/assets/images/logo-mini.svg" alt="logo" />
         </a>
       </div>
       <div className="navbar-menu-wrapper d-flex align-items-stretch">
@@ -33,7 +33,7 @@ const Navbar = ({user}) => {
           <li className="nav-item nav-profile dropdown">
             <a className="nav-link dropdown-toggle" id="profileDropdown" href="/" data-bs-toggle="dropdown" aria-expanded="false">
               <div className="nav-profile-img">
-                <img src="assets/images/faces/face1.jpg" alt="imagess" />
+                <img src="/assets/images/faces/face1.jpg" alt="imagess" />
                 <span className="availability-status online"></span>
               </div>
               <div className="nav-profile-text">
@@ -65,7 +65,7 @@ const Navbar = ({user}) => {
               <div className="dropdown-divider"></div>
               <div className="dropdown-item preview-item">
                 <div className="preview-thumbnail">
-                  <img src="assets/images/faces/face4.jpg" alt="imagess" className="profile-pic" />
+                  <img src="/assets/images/faces/face4.jpg" alt="imagess" className="profile-pic" />
                 </div>
                 <div className="preview-item-content d-flex align-items-start flex-column justify-content-center">
                   <h6 className="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
@@ -75,7 +75,7 @@ const Navbar = ({user}) => {
               <div className="dropdown-divider"></div>
               <div className="dropdown-item preview-item">
                 <div className="preview-thumbnail">
-                  <img src="assets/images/faces/face2.jpg" alt="imagess" className="profile-pic" />
+                  <img src="/assets/images/faces/face2.jpg" alt="imagess" className="profile-pic" />
                 </div>
                 <div className="preview-item-content d-flex align-items-start flex-column justify-content-center">
                   <h6 className="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
@@ -85,7 +85,7 @@ const Navbar = ({user}) => {
               <div className="dropdown-divider"></div>
               <a className="dropdown-item preview-item" href="/">
                 <div className="preview-thumbnail">
-                  <img src="assets/images/faces/face3.jpg" alt="imagess" className="profile-pic" />
+                  <img src="/assets/images/faces/face3.jpg" alt="imagess" className="profile-pic" />
                 </div>
                 <div className="preview-item-content d-flex align-items-start flex-column justify-content-center">
                   <h6 className="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
