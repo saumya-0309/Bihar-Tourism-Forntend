@@ -42,7 +42,7 @@ function ResponsiveAppBar({user}) {
     const drawer = (
         <Box onClick={handleOpenNavMenu} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
+                YatraBihar
             </Typography>
             <Divider />
             <List>
@@ -100,7 +100,7 @@ function ResponsiveAppBar({user}) {
                                 }}
                                 sx={{
                                     display: { xs: 'block', sm: 'none' },
-                                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+                                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 280 },
                                 }}
                             >
                                 {drawer}
