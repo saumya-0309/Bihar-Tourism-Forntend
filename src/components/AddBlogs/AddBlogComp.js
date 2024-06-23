@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../Common/Footer';
+import AddBlogSec from './AddBlogSec';
 
 const AddBlogComp = () => {
   return (
@@ -20,7 +21,7 @@ const AddBlogComp = () => {
             </ul>
           </nav>
         </div>
-        {/* add your component */}
+        <AddBlogSec/>
       </div>
       <Footer/>
     </div>

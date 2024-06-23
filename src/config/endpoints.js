@@ -10,5 +10,10 @@ export const endpoints = {
       cancelTour: "api/tour/cancelTour", // post request provide token also
       addNewTour: "api/tour/addTour", // post request provide admin token also
     },
+    blog : {
+      postBlog: "api/blog/addblog", // post request provide admin token also
+      getBlog: "api/blog/getallblog", // post request provide admin token also
+      getBlogBySlug : "api/blog/getblogbyslug", // post request provide admin
+    }
   };
   

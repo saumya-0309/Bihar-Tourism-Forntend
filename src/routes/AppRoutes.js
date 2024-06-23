@@ -13,6 +13,7 @@ import BlogPage from "../pages/BlogPage";
 import Logout from "../pages/Logout";
 import AdminBlog from "../pages/AdminBlog";
 import AddBlog from "../pages/AddBlog";
+import BlogShow from "../pages/BlogShow";
 
 
 export default function AppRoutes() {
@@ -21,6 +22,7 @@ export default function AppRoutes() {
     <Routes>
       <Route path="/" element={<MainPage />} />
       <Route path="/blog" element={<BlogPage />} />
+      <Route path="/blog/:slug" element={<BlogShow />} />
       <Route path="/" element={<ProtectedRoutes />}>
         <Route path="/account" element={<Accounts />} />
         <Route path="logout"  element={ <Logout />} />

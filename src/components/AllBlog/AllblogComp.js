@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../Common/Footer';
 import { useNavigate } from 'react-router-dom';
+import ShowAllBlog from './ShowAllBlog';
 
 const AddblogComp = () => {
     let navigate = useNavigate();
@@ -22,7 +23,7 @@ const AddblogComp = () => {
             </ul>
           </nav>
         </div>
-        {/* add your component */}
+        <ShowAllBlog/>
       </div>
       <Footer/>
     </div>
