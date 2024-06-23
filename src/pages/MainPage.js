@@ -1,43 +1,19 @@
 import React from 'react'
 import ResponsiveAppBar from '../components/Common/Navbar';
 import { useUser } from '../hooks/user';
-import Carousel from 'react-material-ui-carousel';
-import { Paper } from '@mui/material';
+import MainPageCrousel from '../components/MainPage/MainPageCrousel';
+import TouristPlaces from '../components/MainPage/TouristPlaces';
+import OurTourGuide from '../components/MainPage/OurTourGuide';
 
 const MainPage = () => {
   const { user } = useUser();
   return (
-    <div>
+    <>
       <ResponsiveAppBar user={user} />
-      <Carousel indicators={false}>
-      <Paper>
-        <img
-          src={"/banner1.png"}
-          alt="banner"
-          fill
-          className="imgbanner"
-        />
-      </Paper>
-      <Paper>
-        <img
-          src={"/banner3.jpeg"}
-          alt="banner"
-          fill
-          className="imgbanner"
-        />
-      </Paper>
-      <Paper>
-        <img
-          src={"/banner4.jpeg"}
-          alt="banner"
-          fill
-          className="imgbanner"
-        />
-      </Paper>
-      </Carousel>
-      <h1>Hello world</h1>
-      <h1>Hello world</h1>
-    </div>
+      <MainPageCrousel/>
+      <TouristPlaces/>
+      <OurTourGuide/>
+    </>
   )
 }
 
