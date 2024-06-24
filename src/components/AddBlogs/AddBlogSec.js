@@ -23,7 +23,8 @@ function AddBlogSec() {
     "jamui",
     "banka",
     "vaishali",
-    "champaran",
+    "WestChamparan",
+    "EastChamparan",
     "samastipur",
     "munger",
     "buxar",
@@ -35,12 +36,14 @@ function AddBlogSec() {
     "kaimur",
     "nawada",
     "rohtas",
-    "lakhisarai"]
+    "lakhisarai",
+    "bodhgaya",
+    "nalanda"]
   
   const ReligionOption = ["none",
     "hindu",
     "sikh",
-    "buddies",
+    "buddhist",
     "jain",
     "christian",
     "islamic"]

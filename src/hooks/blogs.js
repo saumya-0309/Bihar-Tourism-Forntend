@@ -95,3 +95,14 @@ export function useGetBlogBySlug({ slug }) {
         isLoading: query.isLoading
     }
 }
+
+export function UseSuggestBlog({city , religion , id}) {
+    const query = useQuery({
+        queryKey: [city, religion, id],
+        queryFn: async () => fetchJson(`${API_HOST_URL}/${endpoints.blog.getBlogByCityOrReligion}/${city}/${religion}/${id}`)
+    })
+    return {
+        blogs: query.data,
+        isLoading: query.isLoading
+    }
+}

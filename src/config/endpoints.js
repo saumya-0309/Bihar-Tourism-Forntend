@@ -14,6 +14,7 @@ export const endpoints = {
       postBlog: "api/blog/addblog", // post request provide admin token also
       getBlog: "api/blog/getallblog", // post request provide admin token also
       getBlogBySlug : "api/blog/getblogbyslug", // post request provide admin
+      getBlogByCityOrReligion : "api/blog/suggestblog", // city , religion and not seggest id provided in params
     }
   };
   
