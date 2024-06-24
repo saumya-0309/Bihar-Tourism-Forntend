@@ -36,7 +36,7 @@ export function usePostBlog() {
     const { accessToken } = getTokens();
     const queryClient = useQueryClient();
     const mutation = useMutation({
-        mutationFn: async ({title, body , author, tags, image }) => fetchJson(`${API_HOST_URL}/${endpoints.blog.postBlog}`, {
+        mutationFn: async ({title, body , author, tags, image , city , religion }) => fetchJson(`${API_HOST_URL}/${endpoints.blog.postBlog}`, {
             method: 'POST',
             headers: { 'Authorization': `Bearer ${accessToken}` , 'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -44,14 +44,16 @@ export function usePostBlog() {
                 body,
                 author,
                 tags,
-                image
+                image,
+                city,
+                religion
             })
         }, true)
     })
     return {
-        handlePostBLog: async (title, body , author , tags , image) => {
+        handlePostBLog: async (title, body , author , tags , image , city , religion) => {
             try {
-                const res = await mutation.mutateAsync({title, body , author, tags, image});
+                const res = await mutation.mutateAsync({title, body , author, tags, image , city , religion});
                 const newblog = await res.json();
                 if(newblog.success){
                     queryClient.invalidateQueries([endpoints.blog.getBlog]);

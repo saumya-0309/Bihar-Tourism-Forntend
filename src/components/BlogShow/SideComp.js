@@ -2,8 +2,8 @@ import React from 'react'
 
 const SideComp = () => {
   return (
-    <div>SideComp</div>
+    <h3>More popular places to visit</h3>
   )
 }
 
-export default SideComp
+export default SideComp;
